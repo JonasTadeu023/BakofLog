@@ -7,10 +7,13 @@
 -- Versão do servidor: 10.1.38-MariaDB
 -- versão do PHP: 7.3.3
 
-SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
+SET SQL_MODE
+= "NO_AUTO_VALUE_ON_ZERO";
+SET AUTOCOMMIT
+= 0;
 START TRANSACTION;
-SET time_zone = "+00:00";
+SET time_zone
+= "+00:00";
 
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
@@ -28,12 +31,18 @@ SET time_zone = "+00:00";
 -- Estrutura da tabela `carrier`
 --
 
-CREATE TABLE `carrier` (
-  `car_name` varchar(300) NOT NULL,
-  `car_cpf` char(11) NOT NULL,
-  `car_phone` varchar(15) NOT NULL,
-  `car_email` varchar(300) DEFAULT NULL,
-  `car_solo` tinyint(1) NOT NULL
+CREATE TABLE `carrier`
+(
+  `car_name` varchar
+(300) NOT NULL,
+  `car_cpf` char
+(11) NOT NULL,
+  `car_phone` varchar
+(15) NOT NULL,
+  `car_email` varchar
+(300) DEFAULT NULL,
+  `car_solo` tinyint
+(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
@@ -44,7 +53,8 @@ CREATE TABLE `carrier` (
 -- Indexes for table `carrier`
 --
 ALTER TABLE `carrier`
-  ADD PRIMARY KEY (`car_cpf`);
+ADD PRIMARY KEY
+(`car_cpf`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
