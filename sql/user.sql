@@ -33,6 +33,7 @@ CREATE TABLE `user` (
   `user_cpf` char(11) NOT NULL,
   `user_email` varchar(300) DEFAULT NULL,
   `user_phone` varchar(15) NOT NULL,
+  `user_photo` varchar(20) NOT NULL,
   `user_adm` enum('0','1') NOT NULL,
   `user_pwd` char(32) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
