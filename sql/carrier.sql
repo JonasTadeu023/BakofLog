@@ -32,6 +32,7 @@ CREATE TABLE `carrier` (
   `car_name` varchar(300) NOT NULL,
   `car_cpf` char(11) NOT NULL,
   `car_phone` varchar(15) NOT NULL,
+  `car_pwd` char(32) NOT NULL
   `car_email` varchar(300) DEFAULT NULL,
   `car_solo` tinyint(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
