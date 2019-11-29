@@ -8,26 +8,24 @@
     </style>
 
     <h4 class="center-align">Entrar</h4>
+    <p class="center-align">Você é?</p>
     <br>
     <form action="includes/login.php" method='POST'>
         <div class="row">
-            <div class="col s12">
-                <label style='font-size:16px;' for="user">CPF</label>
-                <input style='font-size:20px;' name='cpf' id='user' type="text" required>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col s12">
-                <label style='font-size:16px;'   for="pass">Senha</label>
-                <input style='font-size:20px;' name='password' id='pass' type="password" required>
+        <div class="col s12">
+                <div class="center-align" style='margin-top:30px;'>
+                    <a href='login_user.php' class="btn-large waves-effect waves-heavy hoverable" type="submit" name="action">Representante
+                        <i class="material-icons right">supervisor_account</i>
+                    </a>
+                </div>
             </div>
         </div>
         <div class="row">
             <div class="col s12">
                 <div class="center-align" style='margin-top:30px;'>
-                    <button class="btn-large waves-effect waves-heavy hoverable" type="submit" name="action">Entrar
-                        <i class="material-icons right">send</i>
-                    </button>
+                    <a href='login_carrier.php' class="btn-large waves-effect waves-heavy hoverable" >Freteiro
+                        <i class="material-icons right">drive_eta</i>
+                    </a>
                 </div>
             </div>
         </div>
