@@ -1,6 +1,6 @@
 <?php
     session_start();
-    include('../functions/dbh.php');
+    include('dbh.php');
 
     $name = mysqli_real_escape_string($conn, trim($_POST['name']));
     $cpf = mysqli_real_escape_string($conn, trim($_POST['cpf']));
@@ -21,7 +21,7 @@
     }
 
     $result = "INSERT INTO user (user_name, user_cpf, user_email, user_phone, user_photo, user_adm, user_pwd) 
-    VALUES ('$name', '$cpf', '$email', '$phone', '$image','1', '$pwd'";
+    VALUES ('$name', '$cpf', '$email', '$phone', '$image','1', '$pwd')";
     $result_perfil = mysqli_query($conn, $result);
 
     $user = '../database/user/'.$cpf.'/';
@@ -32,7 +32,7 @@
           $_SESSION['Cadastro concluido com sucesso!!!'] = true;
         }
         $conn->close();
-        header('location: ../templates/login.php');
+        header('location: ../public/login_user.php');
         exit();
     }
 ?>
