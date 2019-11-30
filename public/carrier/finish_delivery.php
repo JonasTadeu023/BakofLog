@@ -13,7 +13,7 @@ session_start();
 </style>
 
 <head>
-    <?php include "../functions/head.php"; ?>
+    <?php include "../../functions/head.php"; ?>
     <title>Registrar entrega</title>
 </head>
 
@@ -21,34 +21,30 @@ session_start();
     <div class="card-panel">
         <h4 class="center-align">Finalizar Entrega</h4>
         <br>
-        <form action="../includes/finish_delivery.php" method='POST' id="form1">
+        <form action="../../includes/finish_delivery.php" method='POST'  enctype="multipart/form-data" id="form1">
 
             <div class="row">
                 <div class="input-field col s12">
                 <div class="file-field input-field">
-                        <div class="btn">
+                        <div class="btn bakof-yellow">
                             <span>Canhoto</span>
-                            <input type="file" name="photo_note">
+                            <input type="file" validate name="photo_note">
                         </div>
                         <div class="file-path-wrapper">
-                            <input class="file-path validate" type="text">
+                            <input class="file-path validate" validate type="text">
                         </div>
                     </div>
                 </div>
                 <div class="col s12">
                     <div class="file-field input-field">
-                        <div class="btn">
+                        <div class="btn bakof-yellow">
                             <span>Caminhão Descarga</span>
-                            <input type="file" name="photo_finnish">
+                            <input type="file" validate name="photo_finish">
                         </div>
                         <div class="file-path-wrapper">
                             <input class="file-path validate" type="text">
                         </div>
                     </div>
-                </div>
-                <div class="col s12">
-                    <label style='font-size:16px;' for="destiny">Observações</label>
-                    <textarea style='font-size:20px;' name='obs' id='destiny' class="materialize-textarea" type="text" value="" required></textarea>
                 </div>
             </div> 
         
