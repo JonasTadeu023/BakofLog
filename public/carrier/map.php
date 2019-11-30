@@ -19,9 +19,14 @@
 	<title>Rotas para a viajem
 </title>
     <script src="http://code.jquery.com/jquery-1.8.1.js" type="text/javascript"></script>
+    <?php include "../../functions/head.php" ?>
 </head>
-<body>
-        <script src="http://maps.google.com/maps/api/js?key=AIzaSyADLsL46CQaEu2smB3EMpEV1eEbInd0ASs"></script>
+<body class="container bakof-blue">
+<div class="card-panel">
+        <img src="../../logo.png" class="responsive-img">
+    </div>
+    <div class="card-panel">
+    <script src="http://maps.google.com/maps/api/js?key=AIzaSyADLsL46CQaEu2smB3EMpEV1eEbInd0ASs"></script>
         <script type="text/javascript">
             function CalculaDistancia() {
                 $('#litResultado').html('Aguarde...');
@@ -63,32 +68,47 @@
                 }
             }
         </script>
-        <table width="100%" cellspacing="0" cellpadding="0" border="0">
+        <table width="100%" cellspacing="0" cellpadding="0" border="0" id="table">
             <tbody>
                 <tr>
                     <td>
                         <label for="txtOrigem"><strong>Endere&ccedil;o de origem</strong></label>
-                        <input type="text" id="txtOrigem" value="<?php echo $saiu;?>" class="field" style="width: 400px" />
+                        <input type="hidden " id="txtOrigem" value="<?php echo $saiu;?>" class="field" style="width: 400px" />
 
                     </td>
                 </tr>
                 <tr>
                     <td>
                         <label for="txtDestino"><strong>Endere&ccedil;o de destino</strong></label>
-                        <input type="text" style="width: 400px" value="<?php echo $chegou;?>" class="field" id="txtDestino" />
+                        <input type="hidden" style="width: 400px" value="<?php echo $chegou;?>" class="field" id="txtDestino" />
 
                     </td>
                 </tr>
                 <tr>
                     <td>
-                        <input type="button" value="Calcular dist&acirc;ncia" onclick="CalculaDistancia()" class="btnNew" />
+                       
                     </td>
                 </tr>
             </tbody>
         </table>
+        <input type="button" class="btn bakof-yellow" value="Calcular dist&acirc;ncia" onclick="CalculaDistancia()" class="btnNew" />
         <div><span id="litResultado">&nbsp;</span></div>
         <div style="padding: 10px 0 0; clear: both">
-            <iframe width="750" scrolling="no" height="350" frameborder="0" id="map" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?saddr=são paulo&daddr=rio de janeiro&output=embed"></iframe>
+            <iframe width="280" scrolling="no" height="350" frameborder="0" id="map" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?saddr=são paulo&daddr=rio de janeiro&output=embed"></iframe>
+        </div>
+    </div>
+    <script>
+    
+    document.getElementById('table').style.display = 'none'
+    
+    </script>
+    <div class="row">
+            <div class="col s12">
+                <a href='finish_delivery.php' class="btn-large waves-effect waves-heavy hoverable bakof-yellow">Terminar entrega
+                    <i class="material-icons right">event_note</i>
+                </a>
+            </div>
+
         </div>
 </body>
 </html>
