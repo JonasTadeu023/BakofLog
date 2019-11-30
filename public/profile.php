@@ -1,5 +1,7 @@
 <?php
 session_start();
+include "../functions/head.php";
+var_dump($_SESSION);
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">

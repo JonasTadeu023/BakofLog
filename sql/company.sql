@@ -29,7 +29,7 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `company` (
-  `com_cnpj` char(7) NOT NULL,
+  `com_cnpj` char(14) NOT NULL,
   `com_name` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 

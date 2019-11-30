@@ -36,7 +36,7 @@ CREATE TABLE `order` (
   `order_time` date NOT NULL,
   `order_products` text NOT NULL,
   `order_client` varchar(300) NOT NULL,
-  `order_cnpj` char(7) DEFAULT NULL,
+  `order_cnpj` char(14) DEFAULT NULL,
   `order_cpf` char(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
