@@ -1,12 +1,12 @@
 <?php
 session_start();
-include "../includes/dbh.php";
+include "../../includes/dbh.php";
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
 
 <head>
-    <?php include "../functions/head.php" ?>
+    <?php include "../../functions/head.php" ?>
     <title>Perfil</title>
     <style>
         a {
