@@ -44,7 +44,7 @@ session_start();
                 </a>
             </div>
             <div class="col s12">
-                <a href='verify_delivery.php' class="btn-large waves-effect waves-heavy hoverable bakof-yellow">Entregas
+                <a href='deliverys.php' class="btn-large waves-effect waves-heavy hoverable bakof-yellow">Entregas
                     <i class="material-icons right">event_note</i>
                 </a>
             </div>
