@@ -1,17 +1,24 @@
 <?php
 session_start();
 include "../includes/dbh.php";
+$car_cpf = $_GET['cpf'];
 
-$sql = "SELECT car_cpf, car_name FROM carrier";
+$sql_getname = "SELECT car_name from carrier where car_cpf = $car_cpf";
+$getname = mysqli_fetch_assoc(mysqli_query($conn, $sql_getname));
+echo mysqli_error($conn);
+
+
+$sql = "SELECT * from delivery where car_cpf = $car_cpf";
 $result = $conn->query($sql);
 
-?>
+
+?> 
 <!DOCTYPE html>
 <html lang="pt-br">
 
 <head>
     <?php include "../functions/head.php" ?>
-    <title>Freteiros</title>
+    <title>Freteiro_dados</title>
     <style>
         a {
             width: 100%;
@@ -34,15 +41,16 @@ $result = $conn->query($sql);
 <table class="highlight centered center">
     <div class="row">
         <a href="profile.php" class="btn bakof-yellow col s2"><i class="material-icons">arrow_backward</i></a>
-        <a href='register_carrier.php' class="btn-large waves-effect waves-heavy hoverable bakof-yellow">Cadastrar freteiro
-                <i class="material-icons right">local_shipping</i>
-        </a>
+    </div>
+    <div class="row">
+        <h5>CPF: <?=$car_cpf?></h5>
+        <h6>Nome: <?=$getname['car_name']?></h6>
     </div>
    
         <thead>
             <tr>
-                <th>Nome</th>
-                <th>CPF</th>
+                <th>Cliente</th>
+                <th>Prazo de Entrega</th>
                 <th>Verificar</th>
             </tr>
         </thead>
@@ -51,12 +59,16 @@ $result = $conn->query($sql);
             <?php 
             while ($row = $result->fetch_assoc()):
                 $cpf = $row['car_cpf'];
-                $nome =$row['car_name'];
+                $order_id = $row['order_id'];
+
+                $sql2 ="SELECT order_client, order_deadline from `order` where order_id = $order_id  ";
+                $order = $conn->query($sql2);
+                $carrier = mysqli_fetch_assoc($order);
             ?>
             <tr> 
-                <td><?=$nome?></td>
-                <td><?=$cpf?></td>
-                <td><a href="../public/dados_carrier.php?cpf=<?=$cpf?>"><i class="material-icons">info</i></a></td>
+                <td><?=$carrier["order_client"];?></td>
+                <td><?=$carrier["order_deadline"]?></td>
+                <td><a href="../includes/dados_carrier.php?cpf=<?=$cpf?>"><i class="material-icons">info</i></a></td>
             </tr>
             <?php endwhile;?>
         </tbody>
