@@ -50,7 +50,7 @@ if ($type == 'user') {
     }
     echo $conn->error;     
 
-    //$conn->close();
-    //header("Location: ../public/deliverys.php");
+    $conn->close();
+    header("Location: ../public/deliverys.php?salvo=1");
 
 }
