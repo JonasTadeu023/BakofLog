@@ -20,7 +20,7 @@ session_destroy();
             </div>
         </div>
 
-        <form action="../login_validator.php" method='POST'>
+        <form action="./login_validator.php" method='POST'>
             <br><br><br><br>
             <div class="row">
                 <div class="col s12">
