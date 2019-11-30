@@ -13,6 +13,12 @@ if ($type == 'user') {
     $sql = "UPDATE delivery SET car_cpf = '$cpf', del_destiny = '$destino', del_truck = '$placa' WHERE del_id = $id";
     $conn->query($sql);
     $conn->close();
+<<<<<<< HEAD
+    $conn->close();
+    header('location: ../public/profile.php');
+    exit();
+}
+=======
     header("Location: ../public/deliverys.php");
 } elseif ($type == 'carrier') {
     $saida = $_POST['del_exit'];
@@ -54,3 +60,4 @@ if ($type == 'user') {
     header("Location: ../public/deliverys.php?salvo=1");
 
 }
+>>>>>>> ecb9ad646eeccc3d4d7b9ff07a10038f58071c34

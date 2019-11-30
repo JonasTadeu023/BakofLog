@@ -43,7 +43,7 @@ include "../includes/dbh.php";
             <thead>
                 <tr>
                     <th>Cód Pedido</th>
-                    <th>Cód Entrega</th>
+                    <th>Cliente</th>
                     <th>Distribuidor</th>
                     <th>Verificar</th>
                 </tr>
@@ -65,10 +65,13 @@ include "../includes/dbh.php";
                     $pedido = $conn->query($sql)->fetch_assoc();
                     echo $conn->error;
                     $carrier = empty($pedido['car_cpf']) ? 'Não especificado' : $pedido['car_cpf'];
+
+                    $sql_client = "SELECT order_client from `order` where order_id = $order_id";
+                    $client_name = mysqli_fetch_assoc(mysqli_query($conn, $sql_client));
                     ?>
                     <tr>
                         <td><?=$pedido['order_id']?></td>
-                        <td><?=$pedido['del_id']?></td>
+                        <td><?=$client_name["order_client"]?></td>
                         <td><?=$carrier?></td>
                         <td><a href="./edit_delivery.php?id=<?=$pedido['del_id']?>"><i class="material-icons">info</i></a></td>
                     </tr>
