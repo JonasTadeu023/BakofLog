@@ -1,7 +1,5 @@
 <?php
 session_start();
-include "../functions/head.php";
-var_dump($_SESSION);
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -19,6 +17,10 @@ var_dump($_SESSION);
         margin: 10px;
     }
 
+    .a {
+        font-size: 10px;
+    }
+
     </style>
 </head>
 
@@ -32,18 +34,13 @@ var_dump($_SESSION);
 
         <div class="row">
             <div class="col s12">
-                <a href='login_user.php' class="btn-large waves-effect waves-heavy hoverable bakof-yellow" type="submit" name="action">Minhas tarefas
+                <a href='login_user.php' class="btn-large waves-effect waves-heavy hoverable bakof-yellow" type="submit" name="action">pedidos
                     <i class="material-icons right">assignment</i>
                 </a>
             </div>
             <div class="col s12">
-                <a href='login_carrier.php' class="btn-large waves-effect waves-heavy hoverable bakof-yellow">Relatar entrega
+                <a href='login_carrier.php' class="btn-large waves-effect waves-heavy hoverable bakof-yellow">Entregas
                     <i class="material-icons right">event_note</i>
-                </a>
-            </div>
-            <div class="col s12">
-                <a href='login_carrier.php' class="btn-large waves-effect waves-heavy hoverable bakof-yellow">Entregas feitas
-                    <i class="material-icons right">event_available</i>
                 </a>
             </div>
 
