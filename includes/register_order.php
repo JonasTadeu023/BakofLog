@@ -13,10 +13,11 @@
     $lastid = mysqli_insert_id($conn);
     $result = "INSERT INTO delivery(order_id) VALUES ($lastid)";
     $result_perfil = mysqli_query($conn, $result);
-    var_dump($result);
-    echo (mysqli_error($conn));
+   
+    
+    $lastid = mysqli_insert_id($conn);
+    $folder = "../database/delivery/delivery$lastid/";
+    mkdir($folder, 0777);
     $conn->close();
-
-
     header('location: ../public/orders.php');
     exit();
