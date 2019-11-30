@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: 30-Nov-2019 às 01:41
+-- Generation Time: 30-Nov-2019 às 01:40
 -- Versão do servidor: 10.1.38-MariaDB
 -- versão do PHP: 7.3.3
 
@@ -25,18 +25,18 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `order`
+-- Estrutura da tabela `delivery`
 --
 
-CREATE TABLE `order` (
-  `order_id` int(3) NOT NULL,
-  `order_status` enum('done','undone') NOT NULL,
-  `order_location` text NOT NULL,
-  `order_time` date NOT NULL,
-  `order_products` text NOT NULL,
-  `order_client` varchar(300) NOT NULL,
-  `order_cnpj` char(7) DEFAULT NULL,
-  `order_cpf` char(11) DEFAULT NULL
+CREATE TABLE `delivery` (
+  `del_id` int(3) NOT NULL,
+  `del_date` datetime NOT NULL,
+  `del_pointA` text NOT NULL,
+  `del_pointB` text NOT NULL,
+  `del_note` varchar(100) NOT NULL,
+  `del_problem` text NOT NULL,
+  `car_cpf` char(11) NOT NULL,
+  `order_id` int(3) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
@@ -44,20 +44,33 @@ CREATE TABLE `order` (
 --
 
 --
--- Indexes for table `order`
+-- Indexes for table `delivery`
 --
-ALTER TABLE `order`
-  ADD PRIMARY KEY (`order_id`);
+ALTER TABLE `delivery`
+  ADD PRIMARY KEY (`del_id`),
+  ADD KEY `car_cpf` (`car_cpf`),
+  ADD KEY `order_id` (`order_id`);
 
 --
 -- AUTO_INCREMENT for dumped tables
 --
 
 --
--- AUTO_INCREMENT for table `order`
+-- AUTO_INCREMENT for table `delivery`
 --
-ALTER TABLE `order`
-  MODIFY `order_id` int(3) NOT NULL AUTO_INCREMENT;
+ALTER TABLE `delivery`
+  MODIFY `del_id` int(3) NOT NULL AUTO_INCREMENT;
+
+--
+-- Constraints for dumped tables
+--
+
+--
+-- Limitadores para a tabela `delivery`
+--
+ALTER TABLE `delivery`
+  ADD CONSTRAINT `delivery_ibfk_1` FOREIGN KEY (`car_cpf`) REFERENCES `carrier` (`car_cpf`),
+  ADD CONSTRAINT `delivery_ibfk_2` FOREIGN KEY (`order_id`) REFERENCES `order` (`order_id`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

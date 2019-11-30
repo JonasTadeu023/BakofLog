@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: 30-Nov-2019 às 01:41
+-- Generation Time: 30-Nov-2019 às 01:40
 -- Versão do servidor: 10.1.38-MariaDB
 -- versão do PHP: 7.3.3
 
@@ -25,18 +25,12 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `order`
+-- Estrutura da tabela `company`
 --
 
-CREATE TABLE `order` (
-  `order_id` int(3) NOT NULL,
-  `order_status` enum('done','undone') NOT NULL,
-  `order_location` text NOT NULL,
-  `order_time` date NOT NULL,
-  `order_products` text NOT NULL,
-  `order_client` varchar(300) NOT NULL,
-  `order_cnpj` char(7) DEFAULT NULL,
-  `order_cpf` char(11) DEFAULT NULL
+CREATE TABLE `company` (
+  `com_cnpj` char(7) NOT NULL,
+  `com_name` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
@@ -44,20 +38,10 @@ CREATE TABLE `order` (
 --
 
 --
--- Indexes for table `order`
+-- Indexes for table `company`
 --
-ALTER TABLE `order`
-  ADD PRIMARY KEY (`order_id`);
-
---
--- AUTO_INCREMENT for dumped tables
---
-
---
--- AUTO_INCREMENT for table `order`
---
-ALTER TABLE `order`
-  MODIFY `order_id` int(3) NOT NULL AUTO_INCREMENT;
+ALTER TABLE `company`
+  ADD PRIMARY KEY (`com_cnpj`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
