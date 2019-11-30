@@ -1,5 +1,6 @@
 <?php
     include_once "../functions/head.php";
+    include_once "../functions/not_needed_session.php";
 ?>
     <style>
 
