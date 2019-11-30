@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: 29-Nov-2019 às 23:42
+-- Generation Time: 30-Nov-2019 às 01:15
 -- Versão do servidor: 10.1.38-MariaDB
 -- versão do PHP: 7.3.3
 
@@ -29,7 +29,8 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `order` (
-  `order_id` int(4) NOT NULL,
+  `order_id` int(3) NOT NULL,
+  `order_status` enum('done','undone') NOT NULL,
   `order_location` text NOT NULL,
   `order_time` date NOT NULL,
   `order_products` text NOT NULL,
@@ -56,7 +57,7 @@ ALTER TABLE `order`
 -- AUTO_INCREMENT for table `order`
 --
 ALTER TABLE `order`
-  MODIFY `order_id` int(4) NOT NULL AUTO_INCREMENT;
+  MODIFY `order_id` int(3) NOT NULL AUTO_INCREMENT;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
