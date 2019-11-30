@@ -15,7 +15,7 @@
 
     if ($row['total'] == 1) {
       $_SESSION['Usuario com este CPF já existe!!!'] = true;
-      header('location: ../index.html');
+      header('location: ../public/index.php');
       $conn->close();
       exit();
     }
