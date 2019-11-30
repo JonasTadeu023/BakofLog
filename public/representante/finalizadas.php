@@ -11,14 +11,12 @@ while ($row = $result->fetch_assoc()) {
     array_push($orders, $row['order_id']);
 }
 
+$d = array();
+
 foreach ($orders as $order_id) {
     $sql = "SELECT del_id, del_donedate, car_cpf FROM delivery WHERE order_id = $order_id";
-    $data = $conn->query($sql);
-    $orders = array();
-}
-
-while ($row = $result->fetch_assoc()) {
-    array_push($orders, $row['order_id']);
+    $dados = $conn->query($sql)->fetch_assoc();
+    array_push($d, $dados);
 }
 
 ?>
@@ -35,30 +33,30 @@ while ($row = $result->fetch_assoc()) {
     <div class="card-panel">
         <div class="row">
             <a href="profile.php" class="btn bakof-yellow col s2"><i class="material-icons">arrow_backward</i></a>
-            <a href='register_carrier.php' class="btn-large waves-effect waves-heavy hoverable bakof-yellow">Cadastrar freteiro
-                <i class="material-icons right">local_shipping</i>
-            </a>
         </div>
         <table class="table">
             <thead>
                 <tr>
-                    <th>Código</th>
+                    <th>Código da entrega</th>
                     <th>Entregador</th>
                     <th>Data de entrega</th>
+                    <th>Ver mais</th>
                 </tr>
             </thead>
             <tbody>
                 <?php
-                while ($row = $result->fetch_assoc()) :
-                    $cpf = $row['car_cpf'];
-                    $nome = $row['car_name'];
+                foreach($d as $dta) :
+                    $cpf = $dta['car_cpf'];
+                    $id = $dta['del_id'];
+                    $data = $dta['del_donedate'];
                     ?>
                     <tr>
-                        <td><?= $nome ?></td>
+                        <td><?= $id ?></td>
                         <td><?= $cpf ?></td>
-                        <td><a href="./dados_carrier.php?cpf=<?= $cpf ?>"><i class="material-icons">info</i></a></td>
+                        <td><?= $data ?></td>
+                        <td><a href="./finalizada.php?id=<?= $id ?>"><i class="material-icons">info</i></a></td>
                     </tr>
-                <?php endwhile; ?>
+                <?php endforeach; ?>
             </tbody>
         </table>
 

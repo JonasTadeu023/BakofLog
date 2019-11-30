@@ -20,6 +20,10 @@ include "../../includes/dbh.php";
         .a {
             font-size: 10px;
         }
+
+        .bakof-yellow {
+            margin: 10px;
+        }
     </style>
 
 </head>
@@ -38,7 +42,9 @@ include "../../includes/dbh.php";
 
             <div class="row">
                 <a href="profile.php" class="btn bakof-yellow col s2"><i class="material-icons">arrow_backward</i></a>
-
+                <a href='./finalizadas.php' class="btn-large waves-effect waves-heavy hoverable bakof-yellow">Entregas finalizadas
+                    <i class="material-icons right">local_shipping</i>
+                </a>
             </div>
 
             <thead>
