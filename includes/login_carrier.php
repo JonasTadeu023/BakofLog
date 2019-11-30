@@ -14,7 +14,7 @@
             
             if (mysqli_num_rows($result) != 1) {
                 $_SESSION['erro_login'] = "Usuario não cadastrado!";
-                header('Location: ../login_carrier.php');
+                header('Location: ../public/login_carrier.php');
                 exit();
             } 
             
@@ -27,25 +27,25 @@
                     $_SESSION['car_email'] = $row['car_email'];
                     $_SESSION['car_solo'] = $row['car_solo'];
                     
-                    header("location: ../login_carrier.php");
+                    header("location: ../public/profile.php");
                     exit();
                 } 
                 
                 else {
-                    header('Location: ../login_carrier.php');
+                    header('Location: ../public/login_carrier.php');
                     exit();
                 }
             }
         }
 
         else{
-            header("location: login_carrier.php");
+            header("location: ../public/login_carrier.php");
             exit();
         }
     } 
     
     else{
-        header("location: login_carrier.php");
+        header("location: ../public/login_carrier.php");
         exit();
     }
 ?>
