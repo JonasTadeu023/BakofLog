@@ -27,19 +27,19 @@
                     $_SESSION['car_email'] = $row['car_email'];
                     $_SESSION['car_solo'] = $row['car_solo'];
                     
-                    header("location: ../public/profile.php");
+                    header("location: ./profile.php");
                     exit();
                 } 
                 
                 else {
-                    header('Location: ../public/login_carrier.php');
+                    header('Location: ./login_carrier.php');
                     exit();
                 }
             }
         }
 
         else{
-            header("location: ../public/login_carrier.php");
+            header("location: ./login_carrier.php");
             exit();
         }
     } 
