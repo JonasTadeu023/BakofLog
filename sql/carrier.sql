@@ -33,7 +33,8 @@ CREATE TABLE `carrier` (
   `car_cpf` char(11) NOT NULL,
   `car_phone` varchar(15) NOT NULL,
   `car_email` varchar(300) DEFAULT NULL,
-  `car_solo` enum('1','0') NOT NULL DEFAULT '1'
+  `car_solo` enum('1','0') NOT NULL DEFAULT '1',
+  `car_pwd` char(15) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
