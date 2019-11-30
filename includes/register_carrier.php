@@ -19,7 +19,7 @@ if (uniqueCPF($cpf, $conn) and validadePassword($pwd1, $pwd2)) {
     $userFolder = '../database/carrier/' . $cpf;
     
     mkdir($userFolder, 0777);
-    header('location: ../public/profile.php');
+    header('location: ../public/representante/profile.php');
 } else {
-    header('location: ../public/register_carrier.php?erro=1');
+    header('location: ../public/representante/register_carrier.php?erro=1');
 }

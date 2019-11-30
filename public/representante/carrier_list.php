@@ -1,6 +1,6 @@
 <?php
 session_start();
-include "../includes/dbh.php";
+include "../../includes/dbh.php";
 
 $sql = "SELECT car_cpf, car_name FROM carrier";
 $result = $conn->query($sql);
@@ -10,7 +10,7 @@ $result = $conn->query($sql);
 <html lang="pt-br">
 
 <head>
-    <?php include "../functions/head.php" ?>
+    <?php include "../../functions/head.php" ?>
     <title>Freteiros</title>
     <style>
         a {
@@ -56,7 +56,7 @@ $result = $conn->query($sql);
             <tr> 
                 <td><?=$nome?></td>
                 <td><?=$cpf?></td>
-                <td><a href="../public/dados_carrier.php?cpf=<?=$cpf?>"><i class="material-icons">info</i></a></td>
+                <td><a href="./dados_carrier.php?cpf=<?=$cpf?>"><i class="material-icons">info</i></a></td>
             </tr>
             <?php endwhile;?>
         </tbody>

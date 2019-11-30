@@ -5,7 +5,7 @@ session_start();
 <html lang="pt-br">
 
 <head>
-    <?php include "../functions/head.php" ?>
+    <?php include "../../functions/head.php" ?>
     <title>Registrar Freteiro</title>
 </head>
 
@@ -26,7 +26,7 @@ session_start();
                     <span class="white-text red">Dados inválidos</span>
                 </div>
             <?php endif; ?>
-            <form action="../includes/register_carrier.php" method="post" enctype="multipart/form-data">
+            <form action="../../includes/register_carrier.php" method="post" enctype="multipart/form-data">
                 <div class="input-field">
                     <input type="text" name="name" id="name" required>
                     <label for="name">Nome</label>

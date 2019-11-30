@@ -3,49 +3,50 @@
         if(!empty($_POST['cpf']) and !empty($_POST['password'])){
             
             session_start();
-            include_once 'dbh.php';
+            include_once '../../includes/dbh.php';
 
             $cpf = mysqli_real_escape_string($conn, $_POST['cpf']);
             $pass = mysqli_real_escape_string($conn, $_POST['password']);
             $pass = md5($pass);
 
-            $query = "SELECT * from carrier where car_cpf = '$cpf';";
+            $query = "SELECT * from user where user_cpf = '$cpf';";
             $result = mysqli_query($conn, $query);
             
             if (mysqli_num_rows($result) != 1) {
                 $_SESSION['erro_login'] = "Usuario não cadastrado!";
-                header('Location: ../public/login_carrier.php');
+                header('Location: ./login_user.php');
                 exit();
             } 
             
             else {
                 $row = mysqli_fetch_assoc($result);
-                if ($row['car_pwd'] == $pass) {
-                    $_SESSION['car_cpf'] = $row['car_cpf'];
-                    $_SESSION['car_name'] = $row['car_name'];
-                    $_SESSION['car_phone'] = $row['car_phone'];
-                    $_SESSION['car_email'] = $row['car_email'];
-                    $_SESSION['car_solo'] = $row['car_solo'];
+                if ($row['user_pwd'] == $pass) {
+                    $_SESSION['cpf'] = $row['user_cpf'];
+                    $_SESSION['name'] = $row['user_name'];
+                    $_SESSION['phone'] = $row['user_phone'];
+                    $_SESSION['email'] = $row['user_email'];
+                    $_SESSION['photo'] = $row['user_photo'];
+                    $_SESSION['adm'] = $row['user_adm'];
                     
-                    header("location: ../public/profile.php");
+                    header("location: ./profile.php");
                     exit();
                 } 
                 
                 else {
-                    header('Location: ../public/login_carrier.php');
+                    header('Location: ./login_user.php');
                     exit();
                 }
             }
         }
 
         else{
-            header("location: ../public/login_carrier.php");
+            header("location: ./login_user.php");
             exit();
         }
     } 
     
     else{
-        header("location: ../public/login_carrier.php");
+        header("location: ./login_user.php");
         exit();
     }
 ?>

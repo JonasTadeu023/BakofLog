@@ -30,10 +30,10 @@ if ($generic_type and uniqueCPF($cpf, $conn) and validadePassword($pwd1, $pwd2))
                 $_SESSION['Cadastro concluido com sucesso!!!'] = true;
             }
             $conn->close();
-            header('location: ../public/login_user.php');
+            header('location: ../public/representante/profile.php');
             exit();
         }
     }
 } else {
-    header('location: ../public/register_user.php?erro=1');
+    header('location: ../public/representante/register_user.php?erro=1');
 }
