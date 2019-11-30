@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: 30-Nov-2019 às 07:26
+-- Generation Time: 30-Nov-2019 às 12:16
 -- Versão do servidor: 10.1.38-MariaDB
 -- versão do PHP: 7.3.3
 
@@ -36,6 +36,14 @@ CREATE TABLE `carrier` (
   `car_pwd` char(32) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- Extraindo dados da tabela `carrier`
+--
+
+INSERT INTO `carrier` (`car_name`, `car_cpf`, `car_phone`, `car_email`, `car_pwd`) VALUES
+('hhh', '15015015015', '123', '5@gmail.com', '202cb962ac59075b964b07152d234b70'),
+('Pedro', '23423423423', '12312323', 'p@gmail.com', '202cb962ac59075b964b07152d234b70');
+
 -- --------------------------------------------------------
 
 --
@@ -44,16 +52,24 @@ CREATE TABLE `carrier` (
 
 CREATE TABLE `delivery` (
   `del_id` int(3) NOT NULL,
-  `del_exit` enum('Frederico Westphalen - RS','Joinville - SC','Campo Grande - MS','Montes Claros -MG','Tauá - CE','Rio Branco -AC') NOT NULL,
-  `del_destiny` text NOT NULL,
+  `del_exit` varchar(20) DEFAULT NULL,
+  `del_destiny` text,
   `del_donedate` text,
-  `del_loadphoto` text NOT NULL,
+  `del_loadphoto` text,
+  `del_entryphoto` varchar(300) DEFAULT NULL,
   `del_finishphoto` varchar(30) DEFAULT NULL,
   `del_problems` text,
-  `car_cpf` char(11) NOT NULL,
-  `order_id` int(3) NOT NULL,
-  `del_truck` varchar(10) NOT NULL
+  `car_cpf` char(11) DEFAULT NULL,
+  `order_id` int(3) DEFAULT NULL,
+  `del_truck` varchar(10) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Extraindo dados da tabela `delivery`
+--
+
+INSERT INTO `delivery` (`del_id`, `del_exit`, `del_destiny`, `del_donedate`, `del_loadphoto`, `del_entryphoto`, `del_finishphoto`, `del_problems`, `car_cpf`, `order_id`, `del_truck`) VALUES
+(5, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 3, NULL);
 
 -- --------------------------------------------------------
 
@@ -69,6 +85,14 @@ CREATE TABLE `order` (
   `order_products` text NOT NULL,
   `order_client` varchar(300) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Extraindo dados da tabela `order`
+--
+
+INSERT INTO `order` (`order_id`, `user_cpf`, `order_status`, `order_deadline`, `order_products`, `order_client`) VALUES
+(2, '12312312312', 'undone', '2019-11-30', 'Algum produto aÃ­', 'Loja do ZÃ©'),
+(3, '12312312312', 'undone', '2019-11-11', 'efsdfsd', 'sdfsdf');
 
 -- --------------------------------------------------------
 
@@ -91,7 +115,8 @@ CREATE TABLE `user` (
 --
 
 INSERT INTO `user` (`user_name`, `user_cpf`, `user_email`, `user_phone`, `user_photo`, `user_adm`, `user_pwd`) VALUES
-('JoÃ£o', '04722427097', 'jddiedrich@gmail.com', '55984234885', '', '0', '202cb962ac59075b964b07152d234b70');
+('Fernando de Vinhas', '04199078070', 'fernando@gmail.com', '5599156020', '', '0', '202cb962ac59075b964b07152d234b70'),
+('JoÃ£o', '12312312312', 'jd@gmail.com', '123123123', 'foto.jpeg', '0', '202cb962ac59075b964b07152d234b70');
 
 --
 -- Indexes for dumped tables
@@ -132,13 +157,13 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT for table `delivery`
 --
 ALTER TABLE `delivery`
-  MODIFY `del_id` int(3) NOT NULL AUTO_INCREMENT;
+  MODIFY `del_id` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `order`
 --
 ALTER TABLE `order`
-  MODIFY `order_id` int(3) NOT NULL AUTO_INCREMENT;
+  MODIFY `order_id` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- Constraints for dumped tables
