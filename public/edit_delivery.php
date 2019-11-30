@@ -35,7 +35,7 @@ $dados = $conn->query($sql)->fetch_assoc();
         </div>
         <h4 class="center-align">Entrega</h4>
         <br>
-        <form action="../includes/save_delivery.php" method='POST'>
+        <form action="../includes/save_delivery.php" method='POST' enctype="multipart/form-data">
             <?php if (isset($_SESSION['cpf'])) : ?>
                 <input type="hidden" name="id" value="<?=$_GET['id']?>">
                 <input type="hidden" name="type" value="user">
@@ -64,14 +64,14 @@ $dados = $conn->query($sql)->fetch_assoc();
                 <div class="row">
                     <div class="col s12">
                         <label style='font-size:16px;' for="motorista">Local de saída</label>
-                        <input style='font-size:20px;' id="motorista" name='car_cpf' id='motorista' type="text" required value="<?=$dados['del_problems']?>">
+                        <input style='font-size:20px;' id="motorista" name='del_exit' id='motorista' type="text" required value="<?=$dados['del_exit']?>">
                     </div>
                 </div>
 
                 <div class="row">
                     <div class="col s12">
-                        <label style='font-size:16px;' for="destiny">Problemas</label>
-                        <input style='font-size:20px;' name='del_destiny' id='destiny' type="text" value="<?=$dados['del_problems']?>" required>
+                        <label style='font-size:16px;' for="problemas">Problemas</label>
+                        <input style='font-size:20px;' name='del_problems' id='problemas' type="text" value="<?=$dados['del_problems']?>" required>
                     </div>
                 </div>
                 <div class="file-field input-field">
@@ -86,7 +86,7 @@ $dados = $conn->query($sql)->fetch_assoc();
                 <div class="file-field input-field">
                     <div class="btn bakof-yellow">
                         <span>Foto da nota</span>
-                        <input type="file" name="nota">
+                        <input type="file" name="notafiscal">
                     </div>
                     <div class="file-path-wrapper">
                         <input class="file-path validate" type="text">
