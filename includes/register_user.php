@@ -12,7 +12,6 @@
     $sql = "SELECT count(*) as total from user where user_cpf = '$cpf'";
     $result = mysqli_query($conn, $sql);
     $row = mysqli_fetch_assoc($result);
-
     if ($row['total'] == 1) {
       $_SESSION['Usuario com este CPF já existe!!!'] = true;
       header('location: ../index.html');
@@ -23,7 +22,7 @@
     $result = "INSERT INTO user (user_name, user_cpf, user_email, user_phone, user_photo, user_adm, user_pwd) 
     VALUES ('$name', '$cpf', '$email', '$phone', '$image','1', '$pwd')";
     $result_perfil = mysqli_query($conn, $result);
-
+    echo (mysqli_error($conn));
     $user = '../database/user/'.$cpf.'/';
     mkdir($user, 0777);
 
