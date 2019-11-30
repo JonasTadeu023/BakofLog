@@ -26,9 +26,9 @@ session_start();
     <div class="card-panel center">
         <div class="center row">
             <?php if (empty($_SESSION['photo'])) : ?>
-                <img src="../generic-avatar.jpg" class="circle col s12">
+                <img src="../../generic-avatar.jpg" class="circle col s12">
             <?php else :
-                $src = "../database/user/" . $_SESSION['cpf'] . "/" . $_SESSION['photo'];   ?>
+                $src = "../../database/user/" . $_SESSION['cpf'] . "/" . $_SESSION['photo'];   ?>
                 <img src="<?= $src ?>" class="circle col s12">
             <?php endif; ?>
             <span>Olá <?= $_SESSION['name'] ?></span>
@@ -53,6 +53,9 @@ session_start();
 
             </div>
         </div>
+    </div>
+    <div class="card-panel">
+        <img src="../../logo.png" class="responsive-img">
     </div>
 </body>
 

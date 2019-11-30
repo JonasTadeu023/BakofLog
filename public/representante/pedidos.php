@@ -61,7 +61,9 @@ include "../../includes/dbh.php";
         </table>
     </div>
 
-
+    <div class="card-panel">
+        <img src="../../logo.png" class="responsive-img">
+    </div>
 </body>
 
 </html>

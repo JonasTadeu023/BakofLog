@@ -66,7 +66,7 @@ $dados = $conn->query($sql)->fetch_assoc();
 
             <div class="row">
                 <div class="col s12">
-                    <label for="del_donedate">Fim da entrega</label>
+                    <label for="del_donedate">Começo da entrega</label>
                     <input value="<?= $dados['del_donedate'] ?>" class="datepicker" id="del_donedate" name='del_donedate' type="text" required>
                 </div>
             </div>
