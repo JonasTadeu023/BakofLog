@@ -21,12 +21,12 @@
             else {
                 $row = mysqli_fetch_assoc($result);
                 if ($row['user_pwd'] == $pass) {
-                    $_SESSION['user_cpf'] = $row['user_cpf'];
-                    $_SESSION['user_name'] = $row['user_name'];
-                    $_SESSION['user_phone'] = $row['user_phone'];
-                    $_SESSION['user_email'] = $row['user_email'];
-                    $_SESSION['user_photo'] = $row['user_photo'];
-                    $_SESSION['user_adm'] = $row['user_adm'];
+                    $_SESSION['cpf'] = $row['user_cpf'];
+                    $_SESSION['name'] = $row['user_name'];
+                    $_SESSION['phone'] = $row['user_phone'];
+                    $_SESSION['email'] = $row['user_email'];
+                    $_SESSION['photo'] = $row['user_photo'];
+                    $_SESSION['adm'] = $row['user_adm'];
                     
                     header("location: ../public/profile.php");
                     exit();

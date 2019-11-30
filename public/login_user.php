@@ -7,7 +7,7 @@
 
 <head>
     <?php include "../functions/head.php" ?>
-    <title>Document</title>
+    <title>Login</title>
 </head>
 
 <body class="bakof-blue container">
