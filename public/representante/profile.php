@@ -34,25 +34,29 @@ session_start();
             <span>Olá <?= $_SESSION['name'] ?></span>
         </div>
 
+        <div class="row">
+            <div class="col s12">
+                <a href='pedidos.php' class="btn-large waves-effect waves-heavy hoverable bakof-yellow" type="submit" name="action">Pedidos
+                    <i class="material-icons right">assignment</i>
+                </a>
+            </div>
+            <div class="col s12">
+                <a href='user_deliverys.php' class="btn-large waves-effect waves-heavy hoverable bakof-yellow">Entregas
+                    <i class="material-icons right">event_note</i>
+                </a>
+            </div>
+            <div class="col s12">
+                <a href='carrier_list.php' class="btn-large waves-effect waves-heavy hoverable bakof-yellow">Freteiros
+                    <i class="material-icons right">local_shipping</i>
+                </a>
+            </div>
             <div class="row">
                 <div class="col s12">
-                    <a href='pedidos.php' class="btn-large waves-effect waves-heavy hoverable bakof-yellow" type="submit" name="action">Pedidos
-                        <i class="material-icons right">assignment</i>
-                    </a>
+                    <a href='../index.php' class="btn-large waves-effect waves-heavy hoverable bakof-yellow">Sair</a>
                 </div>
-                <div class="col s12">
-                    <a href='user_deliverys.php' class="btn-large waves-effect waves-heavy hoverable bakof-yellow">Entregas
-                        <i class="material-icons right">event_note</i>
-                    </a>
-                </div>
-                <div class="col s12">
-                    <a href='carrier_list.php' class="btn-large waves-effect waves-heavy hoverable bakof-yellow">Freteiros
-                        <i class="material-icons right">local_shipping</i>
-                    </a>
-                </div>
-
             </div>
         </div>
+    </div>
     </div>
 </body>
 
