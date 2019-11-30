@@ -36,7 +36,11 @@ session_start();
                     <i class="material-icons right">event_note</i>
                 </a>
             </div>
-
+        </div>
+        <div class="row">
+            <div class="col s12">
+                <a href='../index.php' class="btn-large waves-effect waves-heavy hoverable bakof-yellow">Sair</a>
+            </div>
         </div>
     </div>
 </body>
