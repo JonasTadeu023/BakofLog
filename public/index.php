@@ -1,5 +1,7 @@
 <?php
 //include_once "../functions/not_needed_session.php";
+session_start();
+session_destroy();
 ?>
 
 <!DOCTYPE html>
