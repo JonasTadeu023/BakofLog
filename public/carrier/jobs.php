@@ -91,7 +91,7 @@ include "../../includes/dbh.php";
                     <th>Cód Pedido</th>
                     <th>Cód Entrega</th>
                     <th>Distribuidor</th>
-                    <th>Verificar</th>
+                    <th>Editar</th>
                 </tr>
             </thead>
 
@@ -116,7 +116,7 @@ include "../../includes/dbh.php";
                         <td><?=$pedido['order_id']?></td>
                         <td><?=$pedido['del_id']?></td>
                         <td><?=$carrier?></td>
-                        <td><a href="./edit_delivery.php?id=<?=$pedido['del_id']?>"><i class="material-icons">info</i></a></td>
+                        <td><a href="./saida.php?id=<?=$pedido['del_id']?>"><i class="material-icons">edit</i></a></td>
                     </tr>
                 <?php endforeach ?>
         <?php endif ?>
