@@ -39,12 +39,12 @@ session_start();
 
         <div class="row">
             <div class="col s12">
-                <a href='register_order.php' class="btn-large waves-effect waves-heavy hoverable bakof-yellow" type="submit" name="action">Registrar pedido
+                <a href='register_order.php' class="btn-large waves-effect waves-heavy hoverable bakof-yellow" type="submit" name="action">Pedidos
                     <i class="material-icons right">assignment</i>
                 </a>
             </div>
             <div class="col s12">
-                <a href='verify_delivery.php' class="btn-large waves-effect waves-heavy hoverable bakof-yellow">Verificar entregas
+                <a href='verify_delivery.php' class="btn-large waves-effect waves-heavy hoverable bakof-yellow">Entregas
                     <i class="material-icons right">event_note</i>
                 </a>
             </div>

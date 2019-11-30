@@ -20,26 +20,20 @@ session_start();
         <form action="../includes/register_order.php" method='POST'>
             <div class="row">
                 <div class="col s12">
-                    <label style='font-size:16px;' for="user">Local</label>
-                    <input style='font-size:20px;' name='order_location' id='user' type="text" required>
+                    <label style='font-size:16px;' for="produtos">Produtos</label>
+                    <textarea style='font-size:20px;' class="materialize-textarea" id="produtos" name='order_products' id='produtos' type="text" required></textarea>
                 </div>
             </div>
             <div class="row">
                 <div class="col s12">
-                    <label style='font-size:16px;' for="user">Produtos</label>
-                    <input style='font-size:20px;' name='order_products' id='user' type="text" required>
+                    <label style='font-size:16px;' for="client">Cliente</label>
+                    <input style='font-size:20px;' name='order_client' id='client' type="text" required>
                 </div>
             </div>
             <div class="row">
                 <div class="col s12">
-                    <label style='font-size:16px;' for="user">Cliente</label>
-                    <input style='font-size:20px;' name='order_client' id='user' type="text" required>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col s12">
-                    <label style='font-size:16px;' for="user">CPF/CNPJ</label>
-                    <input style='font-size:20px;' name='c_alt' id='user' type="text" required>
+                    <label for="date">Data limite(ano-mês-dia)</label>
+                    <input type="text" class="datepicker" id="date" name="date">
                 </div>
             </div>
 
@@ -54,6 +48,8 @@ session_start();
             </div>
         </form>
     </div>
+
+    <script src="../functions/datepicker.js"> </script>
 </body>
 
 
