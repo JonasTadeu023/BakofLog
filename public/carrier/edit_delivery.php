@@ -36,29 +36,6 @@ $dados = $conn->query($sql)->fetch_assoc();
         <h4 class="center-align">Entrega</h4>
         <br>
         <form action="../includes/save_delivery.php" method='POST' enctype="multipart/form-data">
-            <?php if (isset($_SESSION['cpf'])) : ?>
-                <input type="hidden" name="id" value="<?= $_GET['id'] ?>">
-                <input type="hidden" name="type" value="user">
-                <div class="row">
-                    <div class="col s12">
-                        <label for="motorista">Motorista(CPF)</label>
-                        <input value="<?= $dados['car_cpf'] ?>" id="motorista" name='car_cpf' id='motorista' type="text" required>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col s12">
-                        <label for="destiny">Destino</label>
-                        <input name='del_destiny' id='destiny' type="text" value="<?= $dados['del_destiny'] ?>" required>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col s12">
-                        <label for="placa">Placa do caminhão</label>
-                        <input name='del_truck' id='placa' type="text" value="<?= $dados['del_truck'] ?>" required>
-                    </div>
-                </div>
-            <?php endif; ?>
-            <?php if (isset($_SESSION['car_cpf'])) : ?>
                 <input type="hidden" name="id" value="<?= $_GET['id'] ?>">
                 <input type="hidden" name="type" value="carrier">
                 <div class="row">
@@ -108,7 +85,6 @@ $dados = $conn->query($sql)->fetch_assoc();
                     </div>
                 </div>
                 <script src="../functions/datepicker.js"></script>
-            <?php endif ?>
             <div class="row">
                 <div class="col s12">
                     <div class="center-align" style='margin-top:30px;'>
