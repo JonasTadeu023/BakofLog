@@ -68,7 +68,7 @@ $result = $conn->query($sql);
             <tr> 
                 <td><?=$carrier["order_client"];?></td>
                 <td><?=$carrier["order_deadline"]?></td>
-                <td><a href="../includes/dados_carrier.php?cpf=<?=$cpf?>"><i class="material-icons">info</i></a></td>
+                <td><a href="../../includes/dados_carrier.php?cpf=<?=$cpf?>"><i class="material-icons">info</i></a></td>
             </tr>
             <?php endwhile;?>
         </tbody>
