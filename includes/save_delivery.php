@@ -11,4 +11,6 @@ if ($type == 'user') {
     $sql = "UPDATE delivery SET car_cpf = '$cpf', del_destiny = '$destino', del_truck = '$placa' WHERE del_id = $id";
     $conn->query($sql);
     $conn->close();
+    header("location: ../public/carriers.php");
+    exit();
 }
