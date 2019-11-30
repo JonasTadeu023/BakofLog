@@ -34,12 +34,12 @@ session_start();
 
         <div class="row">
             <div class="col s12">
-                <a href='login_user.php' class="btn-large waves-effect waves-heavy hoverable bakof-yellow" type="submit" name="action">pedidos
+                <a href='register_delivery.php' class="btn-large waves-effect waves-heavy hoverable bakof-yellow" type="submit" name="action">Registrar entrega
                     <i class="material-icons right">assignment</i>
                 </a>
             </div>
             <div class="col s12">
-                <a href='login_carrier.php' class="btn-large waves-effect waves-heavy hoverable bakof-yellow">Entregas
+                <a href='verify_delivery.php' class="btn-large waves-effect waves-heavy hoverable bakof-yellow">Verificar entregas
                     <i class="material-icons right">event_note</i>
                 </a>
             </div>
