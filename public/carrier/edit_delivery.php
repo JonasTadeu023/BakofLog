@@ -36,7 +36,6 @@ $dados = $conn->query($sql)->fetch_assoc();
         <h4 class="center-align">Entrega</h4>
         <br>
         <form action="../../includes/save_delivery.php" method='POST' enctype="multipart/form-data">
-            <?php if (isset($_SESSION['car_cpf'])) : ?>
                 <input type="hidden" name="id" value="<?= $_GET['id'] ?>">
                 <input type="hidden" name="type" value="carrier">
                 <div class="row">
@@ -85,8 +84,7 @@ $dados = $conn->query($sql)->fetch_assoc();
                         <input value="<?= $dados['del_donedate'] ?>" class="datepicker" id="del_donedate" name='del_donedate' type="text" required>
                     </div>
                 </div>
-                <script src="../functions/datepicker.js"></script>
-            <?php endif ?>
+                <script src="../../functions/datepicker.js"></script>
             <div class="row">
                 <div class="col s12">
                     <div class="center-align" style='margin-top:30px;'>
