@@ -28,7 +28,7 @@
                     $_SESSION['user_photo'] = $row['user_photo'];
                     $_SESSION['user_adm'] = $row['user_adm'];
                     
-                    header("location: ../public/login_user.php");
+                    header("location: ../public/profile.php");
                     exit();
                 } 
                 

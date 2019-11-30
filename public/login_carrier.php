@@ -9,7 +9,7 @@
 
     <h4 class="center-align">Entrar</h4>
     <br>
-    <form action="includes/login_carrier.php" method='POST'>
+    <form action="../includes/login_carrier.php" method='POST'>
         <div class="row">
             <div class="col s12">
                 <label style='font-size:16px;' for="user">CPF</label>

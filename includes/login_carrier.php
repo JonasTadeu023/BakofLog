@@ -27,7 +27,7 @@
                     $_SESSION['car_email'] = $row['car_email'];
                     $_SESSION['car_solo'] = $row['car_solo'];
                     
-                    header("location: ../public/login_carrier.php");
+                    header("location: ../public/profile.php");
                     exit();
                 } 
                 
