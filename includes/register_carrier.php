@@ -25,11 +25,9 @@
     $result = "INSERT INTO carrier (car_name, car_cpf, car_email, car_phone, car_solo, car_pwd) 
     VALUES ('$name', '$cpf', '$email', '$phone','$solo', '$pwd')";
     $result_perfil = mysqli_query($conn, $result);
-    echo mysqli_error($conn);
-    var_dump($result_perfil);
     $conn->close();
 
-    echo mysqli_error($conn);
-    //header('location: ../public/login_carrier.php');
-    //exit();
+
+    header('location: ../public/login_carrier.php');
+    exit();
 ?>
