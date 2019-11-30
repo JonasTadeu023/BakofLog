@@ -33,7 +33,7 @@ $dados = $conn->query($sql)->fetch_assoc();
         <div class="row">
             <a href="profile.php" class="btn bakof-yellow col s2"><i class="material-icons">arrow_backward</i></a>
         </div>
-        <h4 class="center-align">Entrega</h4>
+        <h4 class="center-align">Início da entrega</h4>
         <br>
         <form action="../../includes/save_delivery.php" method='POST' enctype="multipart/form-data">
             <input type="hidden" name="id" value="<?= $_GET['id'] ?>">
@@ -45,12 +45,6 @@ $dados = $conn->query($sql)->fetch_assoc();
                 </div>
             </div>
 
-            <div class="row">
-                <div class="col s12">
-                    <label for="problemas">Problemas</label>
-                    <input name='del_problems' id='problemas' type="text" value="<?= $dados['del_problems'] ?>" required>
-                </div>
-            </div>
             <div class="file-field input-field">
                 <div class="btn bakof-yellow">
                     <span>Foto do carregamento</span>
@@ -69,15 +63,7 @@ $dados = $conn->query($sql)->fetch_assoc();
                     <input class="file-path validate" type="text">
                 </div>
             </div>
-            <div class="file-field input-field">
-                <div class="btn bakof-yellow">
-                    <span>Foto do canhoto</span>
-                    <input type="file" name="canhoto">
-                </div>
-                <div class="file-path-wrapper">
-                    <input class="file-path validate" type="text">
-                </div>
-            </div>
+
             <div class="row">
                 <div class="col s12">
                     <label for="del_donedate">Fim da entrega</label>

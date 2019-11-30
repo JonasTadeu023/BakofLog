@@ -47,6 +47,7 @@ include "../../includes/dbh.php";
                     <th>Cód Entrega</th>
                     <th>Distribuidor</th>
                     <th>Verificar</th>
+                    <th>iniciar entrega</th>
                 </tr>
             </thead>
 
