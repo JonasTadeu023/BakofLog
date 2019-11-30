@@ -14,17 +14,16 @@ $type = $photo['type'];
 $generic_type = imageTypeValidate($type);
 
 if ($generic_type and uniqueCPF($cpf, $conn) and validadePassword($pw1, $pw2)) {
-    
-    $result = "INSERT INTO user (user_name, user_cpf, user_email, user_phone, user_photo, user_adm, user_pwd) 
-    VALUES ('$name', '$cpf', '$email', '$phone', '$image','0', '$pwd1')";
-    $result_perfil = mysqli_query($conn, $result);
-    echo (mysqli_error($conn));
     $userFolder = '../database/user/' . $cpf;
     
     mkdir($userFolder, 0777);
 
-    if (move_uploaded_file($photo['tmp_name'], "$userFolder/foto.$generic_type")) {
-        if ($conn->query($sql) == true) {
+    if (move_uploaded_file($photo['tmp_name'], $userFolder. "/foto" . $generic_type)) {
+        if ($conn->query($result_perfil) == true) {
+            $result = "INSERT INTO user (user_name, user_cpf, user_email, user_phone, user_photo, user_adm, user_pwd) 
+            VALUES ('$name', '$cpf', '$email', '$phone', '$image','0', '$pwd1')";
+            $result_perfil = mysqli_query($conn, $result);
+            echo (mysqli_error($conn));
             $_SESSION['Cadastro concluido com sucesso!!!'] = true;
         }
         $conn->close();
