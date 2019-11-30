@@ -8,19 +8,17 @@ session_start();
     <?php include "../functions/head.php" ?>
     <title>Perfil</title>
     <style>
-    
-    a {
-        width: 100%;
-    }
+        a {
+            width: 100%;
+        }
 
-    div.col.s12{
-        margin: 10px;
-    }
+        div.col.s12 {
+            margin: 10px;
+        }
 
-    .a {
-        font-size: 10px;
-    }
-
+        .a {
+            font-size: 10px;
+        }
     </style>
 </head>
 
@@ -43,17 +41,42 @@ session_start();
                     <i class="material-icons right">assignment</i>
                 </a>
             </div>
-            <div class="col s12">
-                <a href='deliverys.php' class="btn-large waves-effect waves-heavy hoverable bakof-yellow">Entregas
-                    <i class="material-icons right">event_note</i>
-                </a>
+
+
+            <div class="row">
+                <div class="col s12">
+                    <a href='register_order.php' class="btn-large waves-effect waves-heavy hoverable bakof-yellow" type="submit" name="action">Pedidos
+                        <i class="material-icons right">assignment</i>
+                    </a>
+                </div>
+                <div class="col s12">
+                    <a href='deliverys.php' class="btn-large waves-effect waves-heavy hoverable bakof-yellow">Entregas
+                        <i class="material-icons right">event_note</i>
+                    </a>
+                </div>
+                <div class="col s12">
+                    <a href='carriers.php' class="btn-large waves-effect waves-heavy hoverable bakof-yellow">Freteiros
+                        <i class="material-icons right">local_shipping</i>
+                    </a>
+                </div>
+
             </div>
-            <div class="col s12">
-                <a href='carriers.php' class="btn-large waves-effect waves-heavy hoverable bakof-yellow">Freteiros
-                <i class="material-icons right">local_shipping</i>
-                </a>
+        <?php endif ?>
+        <?php if (isset($_SESSION['car_cpf'])) : ?>
+            <div class="center row">
+                <i class="material-icons large">local_shipping</i>
+                <h4>Olá <?= $_SESSION['name'] ?></h4>
             </div>
-        </div>
+
+            <div class="row">
+                <div class="col s12">
+                    <a href='deliverys.php' class="btn-large waves-effect waves-heavy hoverable bakof-yellow">Entregas
+                        <i class="material-icons right">event_note</i>
+                    </a>
+                </div>
+
+            </div>
+        <?php endif ?>
     </div>
 </body>
 
