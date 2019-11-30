@@ -1,45 +1,69 @@
 <?php
-include('../functions/head.php');
+session_start();
+session_destroy();
 ?>
+<!DOCTYPE html>
+<html lang="en">
 
+<head>
+    <?php include "../functions/head.php" ?>
+    <title>Registrar representante</title>
+</head>
 
-<div class="container">
-    <h5>Cadastrar representante de vendas</h5>
-    <div class="card-panel">
-        <form action="../includes/register_user.php" method="post" enctype="multipart/form-data">
-            <div class="input-field">
-                <input type="text" name="name" id="name" required>
-                <label for="name">Nome</label>
+<body class="bakof-blue ">
+    <div class="container">
+        <div class="card-panel">
+            <div class="row">
+                <div class="center header">
+                    <i class="material-icons small">supervisor_account</i>
+                    <h5>Cadastrar representante</h5>
+                </div>
             </div>
-            <div class="input-field">
-                <input type="text" name="cpf" id="cpf" required>
-                <label for="cpf">CPF</label>
-            </div>
-            <div class="input-field">
-                <input type="email" name="email" id="email" required>
-                <label for="email">Email</label>
-            </div>
-            <div class="input-field">
-                <input type="tel" name="phone" id="phone" required>
-                <label for="phone">Telefone</label>
-            </div>
-            <div class="input-field">
-                <input type="password" name="pwd1" id="pwd1" required>
-                <label for="pwd1">Senha</label>
-            </div>
-            <div class="input-field">
-                <input type="password" name="pwd2" id="pwd2" required>
-                <label for="pwd2">Confirme a senha</label>
-            </div>
-            <div class="input-field">
-                <input type="file" name="arquivo"><br>
-                <label for="name">Foto(opcional)</label>
-            </div>
-            <div class="center">
-                <input class="btn" type="submit" value="Cadastrar representante">
-            </div>
-        </form>
-    </div>
-</div>
+            <?php if (isset($_GET['erro'])) : ?>
+                <div class="center">
+                    <span class="white-text red">Dados inválidos</span>
+                </div>
+            <?php endif; ?>
+            <form action="../includes/register_user.php" method="post" enctype="multipart/form-data">
+                <div class="input-field">
+                    <input type="text" name="name" id="name" required>
+                    <label for="name">Nome</label>
+                </div>
+                <div class="input-field">
+                    <input type="text" name="cpf" id="cpf" required>
+                    <label for="cpf">CPF</label>
+                </div>
+                <div class="input-field">
+                    <input type="email" name="email" id="email" required>
+                    <label for="email">Email</label>
+                </div>
+                <div class="input-field">
+                    <input type="tel" name="phone" id="phone" required>
+                    <label for="phone">Telefone</label>
+                </div>
+                <div class="input-field">
+                    <input type="password" name="pwd1" id="pwd1" required>
+                    <label for="pwd1">Senha</label>
+                </div>
+                <div class="input-field">
+                    <input type="password" name="pwd2" id="pwd2" required>
+                    <label for="pwd2">Confirme a senha</label>
+                </div>
+                <div class="file-field input-field">
+                    <div class="btn bakof-yellow">
+                        <span>Foto(opcional)</span>
+                        <input type="file" name="arquivo">
+                    </div>
+                    <div class="file-path-wrapper">
+                        <input class="file-path validate" type="text">
+                    </div>
+                </div>
+                <div class="center">
+                    <input class="btn bakof-yellow" type="submit" value="Cadastrar representante">
+                </div>
+            </form>
 
+        </div>
 </body>
+
+</html>

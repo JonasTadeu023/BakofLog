@@ -1,37 +1,52 @@
 <?php
-    include_once "../functions/head.php";
-    include_once "../functions/not_needed_session.php";
+//include_once "../functions/not_needed_session.php";
 ?>
-    <style>
 
-        
+<!DOCTYPE html>
+<html lang="pt-br">
 
-    </style>
+<head>
+    <?php include "../functions/head.php" ?>
+    <title>Document</title>
+</head>
 
-    <h4 class="center-align">Entrar</h4>
-    <br>
-    <form action="../includes/login_user.php" method='POST'>
+<body class="bakof-blue container">
+    <div class="card-panel ">
         <div class="row">
-            <div class="col s12">
-                <label style='font-size:16px;' for="user">CPF</label>
-                <input style='font-size:20px;' name='cpf' id='user' type="text" required>
+            <div class="center header">
+                <i class="material-icons medium">portrait</i>
+                <h4>Login</h4>
             </div>
         </div>
-        <div class="row">
-            <div class="col s12">
-                <label style='font-size:16px;'   for="pass">Senha</label>
-                <input style='font-size:20px;' name='password' id='pass' type="password" required>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col s12">
-                <div class="center-align" style='margin-top:30px;'>
-                    <button class="btn-large waves-effect waves-heavy hoverable" type="submit" name="action">Entrar
-                        <i class="material-icons right">send</i>
-                    </button>
+
+        <form action="../includes/login_user.php" method='POST'>
+            <br><br><br><br>
+            <div class="row">
+                <div class="col s12">
+                    <label for="user">CPF</label>
+                    <input name='cpf' id='user' type="text" required>
                 </div>
             </div>
-        </div>
-    </form>
+            <div class="row">
+                <div class="col s12">
+                    <label for="pass">Senha</label>
+                    <input name='password' id='pass' type="password" required>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col s12">
+                    <div class="center-align">
+                        <button class="btn-large waves-effect waves-heavy hoverable bakof-yellow" type="submit" name="action">Entrar
+                            <i class="material-icons right">arrow_forward</i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+
+        </form>
+    </div>
+
 </body>
+
 </html>

@@ -1,4 +1,15 @@
 <?php
 session_start();
-include "../functions/head.php";
 ?>
+<!DOCTYPE html>
+
+<head>
+    <?php include "../functions/head.php" ?>
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+
+</html>
