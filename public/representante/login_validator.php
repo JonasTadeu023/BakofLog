@@ -3,7 +3,7 @@
         if(!empty($_POST['cpf']) and !empty($_POST['password'])){
             
             session_start();
-            include_once 'dbh.php';
+            include_once '../../includes/dbh.php';
 
             $cpf = mysqli_real_escape_string($conn, $_POST['cpf']);
             $pass = mysqli_real_escape_string($conn, $_POST['password']);
@@ -14,7 +14,7 @@
             
             if (mysqli_num_rows($result) != 1) {
                 $_SESSION['erro_login'] = "Usuario não cadastrado!";
-                header('Location: ../public/login_user.php');
+                header('Location: ./login_user.php');
                 exit();
             } 
             
@@ -28,25 +28,25 @@
                     $_SESSION['photo'] = $row['user_photo'];
                     $_SESSION['adm'] = $row['user_adm'];
                     
-                    header("location: ../public/profile.php");
+                    header("location: ./profile.php");
                     exit();
                 } 
                 
                 else {
-                    header('Location: ../public/login_user.php');
+                    header('Location: ./login_user.php');
                     exit();
                 }
             }
         }
 
         else{
-            header("location: ../public/login_user.php");
+            header("location: ./login_user.php");
             exit();
         }
     } 
     
     else{
-        header("location: ../public/login_user.php");
+        header("location: ./login_user.php");
         exit();
     }
 ?>

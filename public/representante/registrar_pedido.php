@@ -6,7 +6,7 @@ session_start();
 <html lang="en">
 
 <head>
-    <?php include "../functions/head.php" ?>
+<?php include "../../functions/head.php" ?>
     <title>Registar pedido</title>
 </head>
 
@@ -17,7 +17,7 @@ session_start();
         </div>
         <h4 class="center-align">Registrar pedido</h4>
         <br>
-        <form action="../includes/register_order.php" method='POST'>
+        <form action="../../includes/register_order.php" method='POST'>
             <div class="row">
                 <div class="col s12">
                     <label style='font-size:16px;' for="produtos">Produtos</label>
@@ -49,7 +49,7 @@ session_start();
         </form>
     </div>
 
-    <script src="../functions/datepicker.js"> </script>
+    <script src="../../functions/datepicker.js"> </script>
 </body>
 
 

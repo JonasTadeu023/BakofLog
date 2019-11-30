@@ -19,5 +19,5 @@
     $folder = "../database/delivery/delivery$lastid/";
     mkdir($folder, 0777);
     $conn->close();
-    header('location: ../public/orders.php');
+    header('location: ../public/representante/pedidos.php');
     exit();

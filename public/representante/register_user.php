@@ -6,7 +6,7 @@ session_destroy();
 <html lang="en">
 
 <head>
-    <?php include "../functions/head.php" ?>
+<?php include "../../functions/head.php" ?>
     <title>Registrar representante</title>
 </head>
 

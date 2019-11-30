@@ -3,7 +3,7 @@
         if(!empty($_POST['cpf']) and !empty($_POST['password'])){
             
             session_start();
-            include_once 'dbh.php';
+            include_once '../../includes/dbh.php';
 
             $cpf = mysqli_real_escape_string($conn, $_POST['cpf']);
             $pass = mysqli_real_escape_string($conn, $_POST['password']);

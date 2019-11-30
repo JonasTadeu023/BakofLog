@@ -1,6 +1,6 @@
 <?php
 session_start();
-include "../includes/dbh.php";
+include "../../includes/dbh.php";
 $car_cpf = $_GET['cpf'];
 
 $sql_getname = "SELECT car_name from carrier where car_cpf = $car_cpf";
@@ -17,7 +17,7 @@ $result = $conn->query($sql);
 <html lang="pt-br">
 
 <head>
-    <?php include "../functions/head.php" ?>
+    <?php include "../../functions/head.php" ?>
     <title>Freteiro_dados</title>
     <style>
         a {

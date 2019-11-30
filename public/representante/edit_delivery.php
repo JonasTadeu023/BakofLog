@@ -1,6 +1,6 @@
 <?php
 session_start();
-include "../includes/dbh.php";
+include "../../includes/dbh.php";
 
 $sql = "SELECT * FROM delivery WHERE del_id =" . $_GET['id'];
 $dados = $conn->query($sql)->fetch_assoc();
@@ -10,7 +10,7 @@ $dados = $conn->query($sql)->fetch_assoc();
 <html lang="pt-br">
 
 <head>
-    <?php include "../functions/head.php" ?>
+    <?php include "../../functions/head.php" ?>
     <title>Perfil</title>
     <style>
         a {
@@ -35,7 +35,7 @@ $dados = $conn->query($sql)->fetch_assoc();
         </div>
         <h4 class="center-align">Entrega</h4>
         <br>
-        <form action="../includes/save_delivery.php" method='POST' enctype="multipart/form-data">
+        <form action="../../includes/save_delivery.php" method='POST' enctype="multipart/form-data">
             <?php if (isset($_SESSION['cpf'])) : ?>
                 <input type="hidden" name="id" value="<?= $_GET['id'] ?>">
                 <input type="hidden" name="type" value="user">

@@ -1,12 +1,13 @@
 <?php
-//include_once "../functions/not_needed_session.php";
+session_start();
+session_destroy();
 ?>
 
 <!DOCTYPE html>
 <html lang="pt-br">
 
 <head>
-    <?php include "../functions/head.php" ?>
+    <?php include "../../functions/head.php" ?>
     <title>Login</title>
 </head>
 
@@ -14,12 +15,12 @@
     <div class="card-panel ">
         <div class="row">
             <div class="center header">
-                <i class="material-icons medium">local_shipping</i>
+                <i class="material-icons medium">portrait</i>
                 <h4>Login</h4>
             </div>
         </div>
 
-        <form action="../includes/login_carrier.php" method='POST'>
+        <form action="login_validator.php" method='POST'>
             <br><br><br><br>
             <div class="row">
                 <div class="col s12">

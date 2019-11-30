@@ -1,5 +1,4 @@
 <?php
-//include_once "../functions/not_needed_session.php";
 session_start();
 session_destroy();
 ?>
@@ -26,10 +25,10 @@ session_destroy();
         <h5 class="center-align">Você é:</h5>
 
         <div class="row">
-            <a href='login_user.php' class="btn-large waves-effect waves-heavy hoverable col s12 bakof-yellow" type="submit" name="action">Representante
+            <a href='./representante/login_user.php' class="btn-large waves-effect waves-heavy hoverable col s12 bakof-yellow" type="submit" name="action">Representante
                 <i class="material-icons right">supervisor_account</i>
             </a>
-            <a href='login_carrier.php' class="btn-large waves-effect waves-heavy hoverable col s12 bakof-yellow">Freteiro
+            <a href='./carrier/login_carrier.php' class="btn-large waves-effect waves-heavy hoverable col s12 bakof-yellow">Freteiro
                 <i class="material-icons right">local_shipping</i>
             </a>
         </div>
