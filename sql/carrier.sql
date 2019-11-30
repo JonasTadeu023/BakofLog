@@ -31,7 +31,6 @@ SET time_zone
 -- Estrutura da tabela `carrier`
 --
 
-<<<<<<< HEAD
 CREATE TABLE `carrier`
 (
   `car_name` varchar
@@ -40,19 +39,12 @@ CREATE TABLE `carrier`
 (11) NOT NULL,
   `car_phone` varchar
 (15) NOT NULL,
+  `car_pwd` char
+(32) NOT NULL
   `car_email` varchar
 (300) DEFAULT NULL,
   `car_solo` tinyint
 (1) NOT NULL
-=======
-CREATE TABLE `carrier` (
-  `car_name` varchar(300) NOT NULL,
-  `car_cpf` char(11) NOT NULL,
-  `car_phone` varchar(15) NOT NULL,
-  `car_pwd` char(32) NOT NULL
-  `car_email` varchar(300) DEFAULT NULL,
-  `car_solo` tinyint(1) NOT NULL
->>>>>>> c5026b67848636525c4b173b10786c696b66edcd
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --

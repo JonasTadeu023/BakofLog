@@ -10,7 +10,6 @@
     <h4 class="center-align">Entrar</h4>
     <p class="center-align">Você é?</p>
     <br>
-    <form action="includes/login.php" method='POST'>
         <div class="row">
         <div class="col s12">
                 <div class="center-align" style='margin-top:30px;'>
@@ -29,6 +28,5 @@
                 </div>
             </div>
         </div>
-    </form>
 </body>
 </html>
