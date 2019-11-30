@@ -45,7 +45,7 @@ include "../includes/dbh.php";
 
             <tbody>
                 <?php
-                $sql = "SELECT * FROM `order` WHERE order_status = 'undone'";
+                $sql = "SELECT * FROM `order` WHERE order_status = 'undone' and user_cpf = " . $_SESSION['cpf'];
                 $result = $conn->query($sql);
                 echo $conn->error;
                 while ($row = $result->fetch_assoc()) :

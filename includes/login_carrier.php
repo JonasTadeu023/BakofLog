@@ -22,7 +22,7 @@
                 $row = mysqli_fetch_assoc($result);
                 if ($row['car_pwd'] == $pass) {
                     $_SESSION['car_cpf'] = $row['car_cpf'];
-                    $_SESSION['name'] = $row['car_name'];
+                    $_SESSION['car_name'] = $row['car_name'];
                     $_SESSION['car_phone'] = $row['car_phone'];
                     $_SESSION['car_email'] = $row['car_email'];
                     $_SESSION['car_solo'] = $row['car_solo'];
