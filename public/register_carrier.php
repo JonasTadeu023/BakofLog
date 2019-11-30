@@ -1,9 +1,8 @@
 <?php
 session_start();
-session_destroy();
 ?>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 
 <head>
     <?php include "../functions/head.php" ?>
@@ -13,6 +12,9 @@ session_destroy();
 <body class="bakof-blue ">
     <div class="container">
         <div class="card-panel">
+            <div class="row">
+                <a href="profile.php" class="btn bakof-yellow col s2"><i class="material-icons">arrow_backward</i></a>
+            </div>
             <div class="row">
                 <div class="center header">
                     <i class="material-icons small">local_shipping</i>
@@ -24,7 +26,7 @@ session_destroy();
                     <span class="white-text red">Dados inválidos</span>
                 </div>
             <?php endif; ?>
-            <form action="../includes/register_user.php" method="post" enctype="multipart/form-data">
+            <form action="../includes/register_carrier.php" method="post" enctype="multipart/form-data">
                 <div class="input-field">
                     <input type="text" name="name" id="name" required>
                     <label for="name">Nome</label>
@@ -50,7 +52,7 @@ session_destroy();
                     <label for="pwd2">Confirme a senha</label>
                 </div>
                 <div class="center">
-                    <input class="btn bakof-yellow" type="submit" value="Cadastrar representante">
+                    <input class="btn bakof-yellow" type="submit" value="Cadastrar freteiro">
                 </div>
             </form>
 

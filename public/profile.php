@@ -27,14 +27,19 @@ session_start();
 <body class="container bakof-blue">
     <div class="card-panel center">
         <div class="center row">
-            <img src="../generic-avatar.jpg" class="circle col s12">
+            <?php if (empty($_SESSION['photo'])): ?>
+                <img src="../generic-avatar.jpg" class="circle col s12">
+            <?php else: 
+            $src = "../database/user/".$_SESSION['cpf']."/".$_SESSION['photo'];   ?>
+                <img src="<?=$src?>" class="circle col s12">
+            <?php endif;?>
             <span>Olá <?= $_SESSION['name'] ?></span>
         </div>
         
 
         <div class="row">
             <div class="col s12">
-                <a href='register_delivery.php' class="btn-large waves-effect waves-heavy hoverable bakof-yellow" type="submit" name="action">Registrar entrega
+                <a href='register_order.php' class="btn-large waves-effect waves-heavy hoverable bakof-yellow" type="submit" name="action">Registrar pedido
                     <i class="material-icons right">assignment</i>
                 </a>
             </div>
@@ -43,7 +48,11 @@ session_start();
                     <i class="material-icons right">event_note</i>
                 </a>
             </div>
-
+            <div class="col s12">
+                <a href='carriers.php' class="btn-large waves-effect waves-heavy hoverable bakof-yellow">Freteiros
+                <i class="material-icons right">local_shipping</i>
+                </a>
+            </div>
         </div>
     </div>
 </body>
