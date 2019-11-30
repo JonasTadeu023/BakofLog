@@ -24,7 +24,7 @@ session_destroy();
                     <span class="white-text red">Dados inválidos</span>
                 </div>
             <?php endif; ?>
-            <form action="../includes/register_user.php" method="post" enctype="multipart/form-data">
+            <form action="../../includes/register_user.php" method="post" enctype="multipart/form-data">
                 <div class="input-field">
                     <input type="text" name="name" id="name" required>
                     <label for="name">Nome</label>
