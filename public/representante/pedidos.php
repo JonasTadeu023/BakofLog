@@ -30,7 +30,7 @@ include "../../includes/dbh.php";
             <div class="row">
                 <a href="profile.php" class="btn bakof-yellow col s2"><i class="material-icons">arrow_backward</i></a>
             </div>
-            <a href='register_order.php' class="btn-large waves-effect waves-heavy hoverable bakof-yellow">Cadastrar Pedido
+            <a href='./registrar_pedido.php' class="btn-large waves-effect waves-heavy hoverable bakof-yellow">Cadastrar Pedido
                 <i class="material-icons right">local_shipping</i>
             </a>
 
