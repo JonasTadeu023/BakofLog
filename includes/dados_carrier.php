@@ -3,7 +3,7 @@
     include('dbh.php');
     $car_cpf = $_GET['cpf'];
     
-    $sql = "SELECT * from localization WHERE del_id = '12' And car_cpf = '0419907860'";
+    $sql = "SELECT * from localization WHERE car_cpf = '$car_cpf'";
     $result = mysqli_query($conn, $sql);
 
     while ($post = mysqli_fetch_array($result)) {

@@ -73,6 +73,7 @@ include "../../includes/dbh.php";
                         <td><?= $pedido['del_id'] ?></td>
                         <td><?= $carrier ?></td>
                         <td><a href="./edit_delivery.php?id=<?= $pedido['del_id'] ?>"><i class="material-icons">info</i></a></td>
+                        <td><a href="./start.php?id=<?= $pedido['del_id'] ?>"><i class="material-icons">flag</i></a></td>
                     </tr>
                 <?php endforeach ?>
     </div>
