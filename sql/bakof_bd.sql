@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: 30-Nov-2019 às 07:21
+-- Generation Time: 30-Nov-2019 às 07:26
 -- Versão do servidor: 10.1.38-MariaDB
 -- versão do PHP: 7.3.3
 
@@ -46,10 +46,10 @@ CREATE TABLE `delivery` (
   `del_id` int(3) NOT NULL,
   `del_exit` enum('Frederico Westphalen - RS','Joinville - SC','Campo Grande - MS','Montes Claros -MG','Tauá - CE','Rio Branco -AC') NOT NULL,
   `del_destiny` text NOT NULL,
-  `del_donedate` text NOT NULL,
-  `del_loadphoto` int(11) NOT NULL,
-  `del_finishphoto` varchar(30) NOT NULL,
-  `del_problems` text NOT NULL,
+  `del_donedate` text,
+  `del_loadphoto` text NOT NULL,
+  `del_finishphoto` varchar(30) DEFAULT NULL,
+  `del_problems` text,
   `car_cpf` char(11) NOT NULL,
   `order_id` int(3) NOT NULL,
   `del_truck` varchar(10) NOT NULL
