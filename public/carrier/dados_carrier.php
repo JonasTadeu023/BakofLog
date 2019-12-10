@@ -3,12 +3,12 @@ session_start();
 include "../../includes/dbh.php";
 $car_cpf = $_GET['cpf'];
 
-$sql_getname = "SELECT car_name from carrier where car_cpf = $car_cpf";
+$sql_getname = "SELECT car_name from carrier where car_cpf = '$car_cpf'";
 $getname = mysqli_fetch_assoc(mysqli_query($conn, $sql_getname));
 echo mysqli_error($conn);
 
 
-$sql = "SELECT * from delivery where car_cpf = $car_cpf";
+$sql = "SELECT * from delivery where car_cpf = '$car_cpf'";
 $result = $conn->query($sql);
 
 
@@ -68,7 +68,7 @@ $result = $conn->query($sql);
             <tr> 
                 <td><?=$carrier["order_client"];?></td>
                 <td><?=$carrier["order_deadline"]?></td>
-                <td><a href="../includes/dados_carrier.php?cpf=<?=$cpf?>"><i class="material-icons">info</i></a></td>
+                <td><a href="../../includes/dados_carrier.php?cpf=<?=$cpf?>"><i class="material-icons">info</i></a></td>
             </tr>
             <?php endwhile;?>
         </tbody>

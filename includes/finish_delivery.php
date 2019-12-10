@@ -39,15 +39,19 @@ if(isset($_FILES['photo_note']) && isset($_FILES['photo_finish'])){
                 $result_perfil = mysqli_query($conn, $result);
                 var_dump($result);
                 echo (mysqli_error($conn));
-                
-                
+
+                $select = "SELECT `order_id` from delivery where `del_id` = $del_id";
+                $row = mysqli_fetch_assoc(mysqli_query($conn, $select));
+
+                $sql = "UPDATE `order` SET `order_status` = 'done' where order_id =".  $row['order_id'];
+                mysqli_query($conn, $sql);
                 $userFolder = '../database/delivery/delivery' . $del_id;
     
 
                 if (!empty($note) and !empty($finish)) {
                     if (move_uploaded_file($_FILES['photo_note']['tmp_name'], "$userFolder/$note") && move_uploaded_file($_FILES['photo_finish']['tmp_name'], "$userFolder/$finish")) {
                         $conn->close();
-                        header('location: ../public/carrier/representante/finalizadas.php');
+                        header('location: ../public/carrier/profile.php');
                         exit();
                     }
                 }

@@ -57,11 +57,8 @@ session_start();
             </div>
         </div>
     </div>
-<<<<<<< HEAD
     <div class="card-panel">
         <img src="../../logo.png" class="responsive-img">
-=======
->>>>>>> 81bdff953e2ba5cb9a98c59e3366a4316306045c
     </div>
 </body>
 

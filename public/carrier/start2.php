@@ -10,7 +10,7 @@
     $date = date("Y-m-d H:i:s");
 
     $result = "INSERT INTO localization (loc_latitude, loc_longitude, del_id, car_cpf, loc_date) 
-    VALUES ('$latitude', '$longitude', '$del_id', '$ok', '$date')";
+    VALUES ('$latitude', '$longitude', '$del_id', '$ok', NOW())";
     $result_perfil = mysqli_query($conn, $result);
 
     if($result_perfil){

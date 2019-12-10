@@ -7,7 +7,7 @@ $sql = "SELECT * FROM delivery WHERE del_id = $id";
 $entrega = $conn->query($sql)->fetch_assoc();
 $sql = "SELECT * FROM `order` WHERE order_id =" . $entrega['order_id'];
 $pedido = $conn->query($sql)->fetch_assoc();
-$src = "../../database/delivery$id/";
+$src = "../../database/delivery/delivery$id/";
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -30,17 +30,17 @@ $src = "../../database/delivery$id/";
         <p><?= $pedido['order_products'] ?></p>
         <h5>Veículo</h5>
         <p><?= $entrega['del_truck'] ?></p>
-        <h5>Data de saída</h5>
+        <h5>Ponto de saída</h5>
         <p><?= $entrega['del_exit'] ?></p>
         <h5>Data de entrega</h5>
         <p><?= $entrega['del_donedate'] ?></p>
         <h5>Data prevista</h5>
         <p><?= $pedido['order_deadline'] ?></p>
         <h5>Carregamento</h5>
-        <img src="<?= $src.$entrega['del_loadphoto']?>" class="responsive-img">
-        <h5>Nota</h5>
-        <img src="<?= $src.$entrega['del_entryphoto']?>" class="responsive-img">
+        <img src="<?= "../".$entrega['del_loadphoto']?>" class="responsive-img">
         <h5>Canhoto</h5>
+        <img src="<?= $src.$entrega['del_entryphoto']?>" class="responsive-img">
+        <h5>Descarga</h5>
         <img src="<?= $src.$entrega['del_finishphoto']?>" class="responsive-img">
         <h5>Problemas</h5>
         <p><?= $entrega['del_problems'] ?></p>
